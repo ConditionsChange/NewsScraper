@@ -7,6 +7,9 @@ var Article = require("./models/articles.js");
 var request = require("request");
 var cheerio = require("cheerio");
 var path = require("path")
+var exphbs = require("express-handlebars");
+
+
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
@@ -14,6 +17,10 @@ mongoose.Promise = Promise;
 
 // Initialize Express
 var app = express();
+
+//setup handlebars
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 // Use morgan and body parser with our app
 app.use(logger("dev"));
@@ -25,7 +32,9 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://localhost/redditscraper");
+// mongoose.connect("mongodb://localhost/redditscraper");
+mongoose.connect("mongodb://heroku_8h7bq78n:9lhr1s2sdn9klgf4858k5dru6h@ds163053.mlab.com:63053/heroku_8h7bq78n");
+
 var db = mongoose.connection;
 
 // Show any mongoose errors
@@ -42,7 +51,7 @@ db.once("open", function() {
 // Routes
 // ======
 app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname + '/public/html/index.html'));
+  res.render("index");
 })
 
 
@@ -212,9 +221,10 @@ app.post("/addnote", function(req, res) {
   });
 })
 
+var port = process.env.PORT || 3000;
 
 // Listen on port 3000
-app.listen(3000, function() {
+app.listen(port, function() {
   console.log("App running on port 3000!");
 });
 
