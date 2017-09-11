@@ -211,6 +211,16 @@ $('body').on('click', '.comment-submit', function() {
             comment: comment
         }
       }).done(function(response) {
+
+
+        for (var i = 0; i < localData.length ; i++){
+            if (localData[i]._id === bid){
+                localData[i].notes.push({name: name, comment:comment})
+                break
+            }
+        }
+
+    
             populateNotes(response, bid, name, comment, true)
       })
 })
