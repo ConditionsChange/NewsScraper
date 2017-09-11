@@ -1,0 +1,111 @@
+head, body{
+    padding:0;
+    margin:0;
+    min-width: 960px;
+}
+
+.jumbotron{
+    background-image: url("../images/reddit-bg.jpg");
+    height: 600px;
+    background-size: cover;
+    text-align: center;
+    position: relative;
+    top: -100px;
+}
+
+
+.title{
+    position:relative;
+    left: 50px;
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+
+.wrapper{ /*div that encases the main body of the web page*/
+    width:100%;	
+	margin:100px auto 0;
+}
+
+.header{
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    width: 100%;
+    background-color: 	#5f9ea0;
+    text-shadow: 2px 2px 8px black;
+    border-bottom: 1px solid black;
+}
+
+.first-row{
+    text-align:center;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    text-shadow: 4px 4px 12px black;
+    font-size: 4em;
+}
+
+.second-row{
+    text-align:center;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    text-shadow: 2px 2px 8px black;
+    font-size: 4em;
+}
+
+.main{
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        background-color: #34BBE7;
+        border-radius: 25px;
+        border: 1px solid black;
+        text-shadow: 3px 3px 8px black;
+        font-size: 1.2em;
+}
+
+.secondary{
+        background-color: gray;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 25px;
+        border: 1px solid black;
+        text-shadow: 2px 2px 8px black;
+        font-size: 1.2em;
+}
+
+
+.show-articles{
+    background-color: #FFA500;
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    position: relative;
+    top: -100px;
+    padding: 20px;
+}
+
+.button-row{
+    margin-top:30px;
+}
+
+
+#scrape-modal-message{
+    font-family: 'Lato', sans-serif;
+    font-size: 1.4em;
+}
+
+.comment-box{
+    margin-bottom: 20px;
+}
+
+.comment-container{
+    font-size: 1.1em;
+    margin: 8px;
+}
