@@ -251,10 +251,11 @@ $('body').on('click', '.delete-comment', function() {
             if (localData[i]._id === bid){
                 for (var j=0;j<localData[i].notes.length;j++){
                     if (localData[i].notes[j].name === name && localData[i].notes[j].comment === comment){
+                        console.log("Removing comment from local data:")
+                        console.log(localData[i].notes[j])
                         localData[i].notes.splice(j,1);
                         break
                     }
-                    break
                 }
             }
         }        
